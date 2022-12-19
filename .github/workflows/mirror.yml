@@ -1,6 +1,6 @@
 name: dockerhub-mirror
 
-on: [workflow_dispatch]
+on: workflow_dispatch
   inputs:
     dockerhub-repo:
       description: 'DockerHub repository'
