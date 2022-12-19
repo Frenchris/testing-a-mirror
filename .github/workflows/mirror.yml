@@ -1,6 +1,6 @@
 name: dockerhub-mirror
 
-on: [push]
+on:
   workflow_dispatch:
     inputs:
       dockerhub-repo:
@@ -16,7 +16,6 @@ on: [push]
         description: 'Dry run'
         required: false
         default: 'false'
-
 jobs:
   dockerhub-mirror:
     runs-on: ubuntu-latest
