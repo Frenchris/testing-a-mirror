@@ -1,4 +1,4 @@
-name: dockerhub-mirror
+name: test-trigger
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
         description: 'WHo you talking to?'
         required: true
 jobs:
-  dockerhub-mirror:
+  test-trigger:
     runs-on: ubuntu-latest
     steps:
       - name: Who you greeting ${{ github.event.inputs.who-to-greet }}
