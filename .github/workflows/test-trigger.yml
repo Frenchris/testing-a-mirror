@@ -1,20 +1,31 @@
-name: test-trigger
+name: test-registry-transfer
 
 on:
   workflow_dispatch:
     inputs:
-      who-to-greet:
-        description: 'WHo you talking to?'
-        required: true
+      source-registry:
+        description: 'Source-registry'
+        required: false
+        default: 'DockerHub'
+      source-registry-loggin:
+        description: 'Source-registry-loggin'
+        required: false
+        default: ${{ secrets.DOCKERHUB_USERNAME }}
+      source-registry-password:
+        description: 'Source-registry-password'
+        required: false
+        default: ${{ secrets.DOCKERHUB_TOKEN }}
 jobs:
   test-trigger:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        name: Who you greeting ${{ github.event.inputs.who-to-greet }}
+        name: Source registry ${{ github.event.inputs.source-registry }}
         uses: frenchris/ghaction-dockerhub-mirror@v1
         with:
-          who-to-greet: ${{ github.event.inputs.who-to-greet }}
+          source-registry: ${{ github.event.inputs.source-registry }}
+          source-registry-loggin: ${{ github.event.inputs.source-registry-loggin }}
+          source-registry-password: ${{ github.event.inputs.source-registry-password }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
