@@ -10,11 +10,11 @@ on:
       source-registry-loggin:
         description: 'Source-registry-loggin'
         required: false
-        default: ${{ secrets.DOCKERHUB_USERNAME }}
+        default: 'root'
       source-registry-password:
         description: 'Source-registry-password'
         required: false
-        default: ${{ secrets.DOCKERHUB_TOKEN }}
+        default: 'registry_password'
 jobs:
   test-trigger:
     runs-on: ubuntu-latest
