@@ -9,8 +9,8 @@ on:
 jobs:
   test-trigger:
     runs-on: ubuntu-latest
-    - uses: actions/checkout@v3
     steps:
+      - uses: actions/checkout@v3
       - name: Who you greeting ${{ github.event.inputs.who-to-greet }}
         uses: frenchris/ghaction-dockerhub-mirror@v1
         with:
