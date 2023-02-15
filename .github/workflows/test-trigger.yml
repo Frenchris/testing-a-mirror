@@ -1,0 +1,16 @@
+name: dockerhub-mirror
+
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 'WHo you talking to?'
+        required: true
+jobs:
+  dockerhub-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Who you greeting ${{ github.event.inputs.who-to-greet }}
+        uses: frenchris/ghaction-dockerhub-mirror@v1
+        with:
+          who-to-greet: ${{ github.event.inputs.who-to-greet }}
