@@ -6,7 +6,7 @@ on:
       source-registry:
         description: 'Source-registry'
         required: false
-        default: 'DockerHub'
+        default: 'docker.01-edu.org'
       source-registry-loggin:
         description: 'Source-registry-loggin'
         required: false
@@ -14,7 +14,7 @@ on:
       source-registry-password:
         description: 'Source-registry-password'
         required: false
-        default: 'registry_password'
+        default: 'GIMMETHEINTERNET'
 jobs:
   test-trigger:
     runs-on: ubuntu-latest
