@@ -36,5 +36,12 @@ jobs:
           source-registry: ${{ github.event.inputs.source-registry }}
           source-registry-loggin: ${{ github.event.inputs.source-registry-loggin }}
           source-registry-password: ${{ github.event.inputs.source-registry-password }}
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+      - name: Echoing a random number
+        run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+      - name: Running bash commands
+        shell: bash
+        run: |
+        echo 1
+        echo 2
+        echo 3
