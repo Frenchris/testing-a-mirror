@@ -32,13 +32,13 @@ jobs:
           username: ${{ github.event.inputs.source-registry-loggin }}
           password: ${{ github.event.inputs.source-registry-password }}
           registry: ${{ github.event.inputs.source-registry }}
-      - id: foo
-        name: Source registry ${{ github.event.inputs.source-registry }}
-        uses: frenchris/ghaction-dockerhub-mirror@v1
-        with:
-          source-registry: ${{ github.event.inputs.source-registry }}
-          source-registry-loggin: ${{ github.event.inputs.source-registry-loggin }}
-          source-registry-password: ${{ github.event.inputs.source-registry-password }}
+      # - id: foo
+      #   name: Source registry ${{ github.event.inputs.source-registry }}
+      #   uses: frenchris/ghaction-dockerhub-mirror@v1
+      #   with:
+      #     source-registry: ${{ github.event.inputs.source-registry }}
+      #     source-registry-loggin: ${{ github.event.inputs.source-registry-loggin }}
+      #     source-registry-password: ${{ github.event.inputs.source-registry-password }}
       - name: Echoing a random number
         run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
