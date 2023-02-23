@@ -43,5 +43,7 @@ jobs:
         run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
       - name: Echoing an input
-        run: echo ${{ github.event.inputs.source-image }}
+        run: |
+          echo ${{ github.event.inputs.source-image }}
+          echo ${{ github.event.inputs.source-image }} 2
         shell: bash
