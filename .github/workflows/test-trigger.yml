@@ -49,5 +49,5 @@ jobs:
           docker pull docker.01-edu.org/test-go
           docker pull docker.01-edu.org/${{ github.event.inputs.source-image }}
           docker image ls
-          docker push ghrc.io/Frenchris/${{ github.event.inputs.source-image }}
+          docker push ghrc.io/frenchris/${{ github.event.inputs.source-image }}
         shell: bash
