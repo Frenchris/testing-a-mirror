@@ -47,5 +47,6 @@ jobs:
           echo ${{ github.event.inputs.source-image }}
           echo ${{ github.event.inputs.source-image }} 2
           docker pull docker.01-edu.org/test-go
+          docker pull docker.01-edu.org/${{ github.event.inputs.source-image }}
           docker image ls
         shell: bash
