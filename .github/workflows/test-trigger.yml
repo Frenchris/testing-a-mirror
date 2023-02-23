@@ -40,8 +40,12 @@ jobs:
         run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
       - name: Running bash commands
-        shell: bash
-        run: |
-        echo 1
-        echo 2
-        echo 3
+
+        runs:
+          using: 'composite'
+          steps:
+            - run: |
+                echo 1
+                echo 2
+                echo 3
+              shell: bash
