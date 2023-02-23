@@ -39,6 +39,3 @@ jobs:
       - name: Echoing a random number
         run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
-      - name: Running bash commands
-        run: |
-          echo 1
